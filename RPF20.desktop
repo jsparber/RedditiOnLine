@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=/app/bin/RPF20 %f
+Comment=RPF20
+Name=UnicoOnLine
+StartupNotify=false
+Categories=Application;
+Type=Application
+
+
+
