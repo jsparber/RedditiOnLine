@@ -1,0 +1,16 @@
+#LAP
+#Sat Aug 01 13:31:20 CEST 2020
+mainPublisher=UNKNOWN
+jnlpInstalled=true
+ssv.decision.all-perms.time=1596367880567
+launchCount=4
+askedInstall=true
+ssv.decision.app.hash=Main\:0z8TXiXhIJGJreGVBF5igURNjsqTinldX4YwKsgsttQ\=JNLP\:a6q/ZuCEDZvRE4bLt3qMzto4qsEmsQ1QvjFiV9wHtdQ\=
+installed.directory=Unico On Line
+ssv.decision.cert.hash=719A64DE6A8B7777DA61A02A69B3D0A938D275CC32E0A3CE4E8DB7050148CDBD
+locallyInstalled=true
+installed.menu=menu\:Unico On Line\:jws_app_shortcut_1596281475838.desktop
+ssv.decision.base=http\://jws.agenziaentrate.it/jws/dichiarazioni/AssistenzaCommonV6.jar
+lastAccessed=Aug 1, 2020 1\:31\:15 PM
+mainTitle=Sogei Application
+installed.rc=

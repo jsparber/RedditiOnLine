@@ -1,80 +1,87 @@
 {
-    "app-id": "it.gov.agenziaentrate.UnicoOnLine",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
-    "sdk": "org.gnome.Sdk",
-    "command": "/app/bin/RPF20",
-    "rename-desktop-file": "RPF20.desktop",
-    "finish-args": [
-        "--share=ipc",
-        "--share=network",
-        "--socket=x11",
-        "--filesystem=~/UnicoOnLine"
-    ],
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/aclocal",
-        "/share/devhelp",
-        "/share/doc",
-        "/share/gc",
-        "/share/info",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
+  "app-id": "it.gov.agenziaentrate.UnicoOnLine",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.36",
+  "sdk": "org.gnome.Sdk",
+  "command": "/app/bin/RPF20",
+  "rename-desktop-file": "RPF20.desktop",
+  "finish-args": [
+    "--share=ipc",
+    "--share=network",
+    "--socket=x11",
+    "--filesystem=~/UnicoOnLine"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/aclocal",
+    "/share/devhelp",
+    "/share/doc",
+    "/share/gc",
+    "/share/info",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
     ],
     "modules": [
-        {
-            "name": "java",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/java",
-                "cp -r * /app/java"
+      {
+        "name": "java",
+        "buildsystem": "simple",
+        "build-commands": [
+          "mkdir -p /app/java",
+          "cp -r * /app/java"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "dest-filename": "linux-x64.tar.gz",
+            "url": "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=242050_3d5a2bb8f8d4428bbe94aed7ec7ae784",
+            "sha256": "92fc256da54af798dc34aeab837df816577f2c46dd111f9f94058c186d36f589"
+          }
+        ]
+      },
+      {
+        "name": "UnicoOnLine",
+        "buildsystem": "simple",
+        "build-commands": [
+          "mkdir -p /app/persone_fisice",
+          "cp -r RPF20.jnlp /app/persone_fisice",
+          "chmod a+x RPF20",
+          "mkdir -p /app/bin",
+          "cp -r RPF20 /app/bin",
+          "mkdir -p /app/share/applications/",
+          "cp RPF20.desktop /app/share/applications/RPF20.desktop",
+          "cp cache.txt /app/persone_fisice"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "http://jws.agenziaentrate.it/jws/dichiarazioni/2020/RPF20.jnlp",
+            "sha256": "6baabf66e0840d9bd11386cbb77a8cceda38aac126b10d50be316257dc07b5d4"
+          },
+          {
+            "type": "script",
+            "commands": [
+              "mkdir -p ~/.java/deployment/security/",
+              "mkdir ~/.java/deployment/cache/6.0/55/ -p",
+              "echo http://jws.agenziaentrate.it > ~/.java/deployment/security/exception.sites",
+              "cp /app/persone_fisice/cache.txt .java/deployment/cache/6.0/55/7780cc77-97b4022aa3f8f6702924d0f076f4f10ca52c625e96be0d06beb0d0a63f068bcc-6.0.lap",
+              "/app/java/bin/javaws /app/persone_fisice/RPF20.jnlp -Xnosplash"
             ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "dest-filename": "linux-x64.tar.gz",
-                    "url": "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=242050_3d5a2bb8f8d4428bbe94aed7ec7ae784",
-                    "sha256": "92fc256da54af798dc34aeab837df816577f2c46dd111f9f94058c186d36f589"
-                }
-            ]
-        },
-        {
-            "name": "UnicoOnLine",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/persone_fisice",
-                "cp -r RPF20.jnlp /app/persone_fisice",
-                "chmod a+x RPF20",
-                "mkdir -p /app/bin",
-                "cp -r RPF20 /app/bin",
-                "mkdir -p /app/share/applications/",
-                "cp RPF20.desktop /app/share/applications/RPF20.desktop"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "http://jws.agenziaentrate.it/jws/dichiarazioni/2020/RPF20.jnlp",
-                    "sha256": "6baabf66e0840d9bd11386cbb77a8cceda38aac126b10d50be316257dc07b5d4"
-                },
-                {
-                  "type": "script",
-                  "commands": [
-                    "mkdir -p ~/.java/deployment/security/",
-                  "echo http://jws.agenziaentrate.it > ~/.java/deployment/security/exception.sites",
-                    "/app/java/bin/javaws /app/persone_fisice/RPF20.jnlp -Xnosplash"
-                  ],
-                  "dest-filename": "RPF20"
-                },
-                {
-                    "type": "file",
-                    "path": "RPF20.desktop",
-                    "sha256": "35c93eab073d2714b0bb325edf21e4a8f8db7a290f25c1c324c1bdce2c11bcec"
-                }
-                
-            ]
-        }
+            "dest-filename": "RPF20"
+          },
+          {
+            "type": "file",
+            "path": "RPF20.desktop",
+            "sha256": "35c93eab073d2714b0bb325edf21e4a8f8db7a290f25c1c324c1bdce2c11bcec"
+          },
+          {
+            "type": "file",
+            "path": "cache.txt",
+            "sha256": "baba052f0f242789a1629f5ed72fed3a53596b95c36ddb88e0dca645defadee7"
+          }
+        ]
+      }
     ]
 }
