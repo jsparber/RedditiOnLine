@@ -1,10 +1,8 @@
 [Desktop Entry]
 Exec=/app/bin/RPF20 %f
-Comment=RPF20
+Comment=Flatpak wrapper of the UnicoOnLine java applet provided by the Agenzia delle Entrate to fillout the tax form
 Name=UnicoOnLine
 StartupNotify=false
 Categories=Application;
 Type=Application
-
-
-
+Icon=it.gov.agenziaentrate.UnicoOnLine

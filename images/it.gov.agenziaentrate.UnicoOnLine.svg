@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="128px" viewBox="0 0 128 128" width="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <linearGradient id="a" gradientTransform="matrix(0.232143 0 0 0.328947 -8.56691 263.826965)" gradientUnits="userSpaceOnUse" x1="88.595886" x2="536.595886" y1="-449.394012" y2="-449.394012">
+        <stop offset="0" stop-color="#9a9996"/>
+        <stop offset="0.0384615" stop-color="#ffffff"/>
+        <stop offset="0.0768555" stop-color="#c0bfbc"/>
+        <stop offset="0.923077" stop-color="#c0bfbc"/>
+        <stop offset="0.961538" stop-color="#ffffff"/>
+        <stop offset="1" stop-color="#9a9996"/>
+    </linearGradient>
+    <path d="m 20 16 h 88 c 4.417969 0 8 3.582031 8 8 v 84 c 0 4.417969 -3.582031 8 -8 8 h -88 c -4.417969 0 -8 -3.582031 -8 -8 v -84 c 0 -4.417969 3.582031 -8 8 -8 z m 0 0" fill="url(#a)"/>
+    <path d="m 20 12 h 88 c 4.417969 0 8 3.582031 8 8 v 80 c 0 4.417969 -3.582031 8 -8 8 h -88 c -4.417969 0 -8 -3.582031 -8 -8 v -80 c 0 -4.417969 3.582031 -8 8 -8 z m 0 0" fill="#f6f5f4"/>
+    <g stroke-linecap="round">
+        <path d="m 28 88 h 20" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 64 32 l -28 56" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 100 88 h -20" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 64 32 l 28 56" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 77.636719 85.695312 c -8.046875 5.777344 -19.417969 5.734376 -27.414063 -0.101562 c -7.992187 -5.835938 -10.492187 -15.921875 -6.023437 -24.3125 c 4.472656 -8.390625 14.726562 -12.859375 24.722656 -10.773438 c 9.992187 2.082032 17.078125 10.167969 17.078125 19.492188" fill="#f6f5f4" stroke="#f6f5f4" stroke-linejoin="round" stroke-width="16"/>
+        <path d="m 43.867188 32 h 20" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 46.226562 70 h 35.277344" fill="none" stroke="#ff7800" stroke-width="12"/>
+        <path d="m 77.636719 85.695312 c -8.046875 5.777344 -19.417969 5.734376 -27.414063 -0.101562 c -7.992187 -5.835938 -10.492187 -15.921875 -6.023437 -24.3125 c 4.472656 -8.390625 14.726562 -12.859375 24.722656 -10.773438 c 9.992187 2.082032 17.078125 10.167969 17.078125 19.492188" fill="#f6f5f4" stroke="#1c71d8" stroke-linejoin="round" stroke-width="12"/>
+        <path d="m 45.867188 70 h 40" fill="none" stroke="#1c71d8" stroke-width="12"/>
+    </g>
+</svg>

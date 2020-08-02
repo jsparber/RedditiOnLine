@@ -52,7 +52,11 @@
           "cp -r RPF20 /app/bin",
           "mkdir -p /app/share/applications/",
           "cp RPF20.desktop /app/share/applications/RPF20.desktop",
-          "cp cache.txt /app/persone_fisice"
+          "cp cache.txt /app/persone_fisice",
+          "mkdir -p /app/share/icons/hicolor/scalable/apps/",
+          "mkdir -p /app/share/icons/hicolor/symbolic/apps/",
+          "cp it.gov.agenziaentrate.UnicoOnLine.svg /app/share/icons/hicolor/scalable/apps/",
+          "cp it.gov.agenziaentrate.UnicoOnLine-symbolic.svg /app/share/icons/hicolor/symbolic/apps/"
         ],
         "sources": [
           {
@@ -74,13 +78,25 @@
           {
             "type": "file",
             "path": "RPF20.desktop",
-            "sha256": "35c93eab073d2714b0bb325edf21e4a8f8db7a290f25c1c324c1bdce2c11bcec"
+            "sha256": "a55ed27ed661f94cc9f6aa95bd320523c38896835380df18ba57e80d3723f0bb"
           },
           {
             "type": "file",
             "path": "cache.txt",
             "sha256": "baba052f0f242789a1629f5ed72fed3a53596b95c36ddb88e0dca645defadee7"
+          },
+          {
+            "type": "file",
+            "path": "images/it.gov.agenziaentrate.UnicoOnLine.svg",
+            "sha256": "93551b1264e06bdbbe2d84e1fc0874cfabc152580225bda2eb911c1130d5b525"
+          },
+          {
+            "type": "file",
+            "path": "images/it.gov.agenziaentrate.UnicoOnLine-symbolic.svg",
+            "sha256": "ad5976f60a76b99c1e5cd78f61441c35cba7fe67bc9be4e75037c8f841e44fdb"
           }
+
+
         ]
       }
     ]
