@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Julian Sparber 2020 <jsparber@gnome.org> -->
+<component type="desktop-application">
+  <id>it.gov.agenziaentrate.UnicoOnLine</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>RedditiOnLine Pf 2020</name>
+  <summary>Export multi-page PDFs from an SVG</summary>
+  <description>
+    <p>A flatpak wrapper of the UnicoOnLine java applet provided by the Agenzia delle Entrate to fillout the tax form.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://gitlab.gnome.org/World/design/vector-slicer/-/raw/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://gitlab.gnome.org/World/design/vector-slicer</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/design/vector-slicer/issues</url>
+  <content_rating type="oars-1.0"/>
+  <releases>
+    <release version="0.0.1" date="2020-02-03">
+      <description>
+        <p>
+          First rel viable first release.
+        </p>
+      </description>
+    </release>
+  </releases>
+  <kudos>
+    <!--
+        GNOME Software kudos:
+        https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
+      -->
+  </kudos>
+  <developer_name>Agenzia delle Entrate</developer_name>
+  <update_contact>jsparber@gnome.org</update_contact>
+  <launchable type="desktop-id">it.gov.agenziaentrate.UnicoOnLine.desktop</launchable>
+</component>

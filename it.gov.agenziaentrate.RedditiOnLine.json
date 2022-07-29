@@ -1,0 +1,115 @@
+{
+  "app-id": "it.gov.agenziaentrate.RedditiOnLine",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "42",
+  "sdk": "org.gnome.Sdk",
+  "command": "/app/bin/RedditiOnLine",
+  "finish-args": [
+    "--share=ipc",
+    "--share=network",
+    "--socket=x11",
+    "--filesystem=~/UnicoOnLine:create",
+    "--persist=.java",
+    "--env=JAVA_HOME=/app/java",
+    "--env=_JAVA_OPTIONS="
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/aclocal",
+    "/share/devhelp",
+    "/share/doc",
+    "/share/gc",
+    "/share/info",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "java",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p /app/java",
+	"cp -r * /app/java/"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "dest-filename": "linux-x64.tar.gz",
+          "url": "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=246799_424b9da4b48848379167015dcc250d8d",
+          "sha256": "61027e8ca9b1921f115dd4983c3f9ebe8785ee2c201d9cd2bf870184460f1704"
+        }
+      ]
+    },
+    {
+      "name": "RedditiOnLine",
+      "buildsystem": "simple",
+      "build-commands": [
+	"mkdir -p /app/java_files",
+        "chmod a+x RedditiOnLine",
+        "mkdir -p /app/bin",
+        "cp -r RedditiOnLine /app/bin",
+        "mkdir -p /app/share/applications/",
+        "cp it.gov.agenziaentrate.RedditiOnLine.desktop /app/share/applications/it.gov.agenziaentrate.RedditiOnLine.desktop",
+        "mkdir -p ~/.java/deployment/security/",
+	"cp trusted.cacerts trusted.certs trusted.jssecacerts trusted.jssecerts /app/java_files",
+        "mkdir -p /app/share/icons/hicolor/scalable/apps/",
+        "mkdir -p /app/share/icons/hicolor/symbolic/apps/",
+        "cp it.gov.agenziaentrate.RedditiOnLine.svg /app/share/icons/hicolor/scalable/apps/",
+        "cp it.gov.agenziaentrate.RedditiOnLine-symbolic.svg /app/share/icons/hicolor/symbolic/apps/"
+      ],
+      "sources": [
+        {
+          "type": "script",
+          "commands": [
+            "if [ ! -d \"~/.java\" ]; then",
+	    "mkdir -p ~/.java/deployment/security/",
+	    "cp /app/java_files/* ~/.java/deployment/security/",
+	    "fi",
+            "export _JAVA_OPTIONS=''",
+	    "export PATH=$PATH:/app/java/bin",
+            "javaws -Xnosplash -wait https://jws.agenziaentrate.it/jws/dichiarazioni/2022/RPF22.jnlp"
+          ],
+          "dest-filename": "RedditiOnLine"
+        },
+        {
+          "type": "file",
+          "path": "it.gov.agenziaentrate.RedditiOnLine.desktop",
+          "sha256": "acb5e7519ccc0346cf462bf981a48c511a548decb69f32ecba33a4b427b03628"
+        },
+        {
+          "type": "file",
+          "path": "images/it.gov.agenziaentrate.RedditiOnLine.svg",
+          "sha256": "93551b1264e06bdbbe2d84e1fc0874cfabc152580225bda2eb911c1130d5b525"
+        },
+        {
+          "type": "file",
+          "path": "images/it.gov.agenziaentrate.RedditiOnLine-symbolic.svg",
+          "sha256": "ad5976f60a76b99c1e5cd78f61441c35cba7fe67bc9be4e75037c8f841e44fdb"
+        },
+	{
+          "type": "file",
+          "path": "java/security/trusted.cacerts",
+          "sha256": "5f742d92ef0bed0963a51a4b57ab89649e9a98e7cbf09322b38d84e473c65b13"
+        },
+	{
+          "type": "file",
+          "path": "java/security/trusted.jssecacerts",
+          "sha256": "5d9ff1eb603e6d28242ca9ccc1d6ce6f1655da5766178ee47e6effc5424c5d40"
+        },
+	{
+          "type": "file",
+          "path": "java/security/trusted.jssecerts",
+          "sha256": "ad7b4fefcddfe8aac373231f028b5b483dc155d5315ae06313f94cc683030f77"
+        },
+	{
+          "type": "file",
+          "path": "java/security/trusted.certs",
+          "sha256": "d777522a424b097db8539ac66f32f7cdd0afc03c74015d3232c7ace0dcd203a4"
+        }
+      ]
+    }
+  ]
+}

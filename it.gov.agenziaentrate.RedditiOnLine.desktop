@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=/app/bin/RedditiOnLine %f
+Comment=Flatpak wrapper of the RedditiOnLine java applet provided by the Agenzia delle Entrate to fillout the tax form
+Name=RedditiOnLine
+StartupNotify=false
+Categories=Application;
+Type=Application
+Icon=it.gov.agenziaentrate.RedditiOnLine
+Keywords=unico;tax;agenzia;entrate;redditi;
